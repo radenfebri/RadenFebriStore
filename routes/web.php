@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\RatingController as BackendRatingController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FavoritController;
+use App\Http\Controllers\Frontend\GoogleController;
 use App\Http\Controllers\Frontend\KeranjangController;
 use App\Http\Controllers\Frontend\LandingController;
 use App\Http\Controllers\Frontend\RatingController;
@@ -172,5 +173,7 @@ Route::middleware(['has.role'])->middleware('auth', 'verified')->group(function 
 });
 
 
-Route::get('auth/google', 'redirectToGoogle')->name('auth.google');
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('callback/google', [GoogleController::class, 'handleCallback']);
+
 
