@@ -29,29 +29,29 @@
                             @if ($images->count() > 0)
                             <div class="carousel-inner item-box">
                                 @if ($images->count() > 0)
-                                @foreach ($images as $key => $item)
-                                <div class="carousel-item product-item {{ $key == '0' ? 'active':'' }}">
-                                    <a href="{{ asset('storage/images-produk/'. $item->image) }}" class="item popup-gallery">
-                                        <img src="{{ asset('storage/images-produk/'. $item->image) }}" alt="{{ $produk->name }}">
-                                    </a>
-                                    @if ($produk->popular == 1)
-                                    <span class="onsale">Populer!</span>
-                                    @else
-                                    
-                                    @endif
-                                </div>
-                                @endforeach
+                                    @foreach ($images as $key => $item)
+                                        <div class="carousel-item product-item {{ $key == '0' ? 'active':'' }}">
+                                            <a href="{{ asset('storage/images-produk/'. $item->image) }}" class="item popup-gallery">
+                                                <img src="{{ asset('storage/images-produk/'. $item->image) }}" alt="{{ $produk->name }}">
+                                            </a>
+                                            @if ($produk->popular == 1)
+                                            <span class="onsale">Populer!</span>
+                                            @else
+                                            
+                                            @endif
+                                        </div>
+                                    @endforeach
                                 @else
-                                <div class="carousel-item product-item active">
-                                    <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
-                                        <img src="{{ asset('front') }}/img/800x800.png" alt="Thumb">
-                                    </a>
-                                    @if ($produk->popular == 1)
-                                    <span class="onsale">Populer!</span>
-                                    @else
-                                    
-                                    @endif
-                                </div>
+                                    <div class="carousel-item product-item active">
+                                        <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
+                                            <img src="{{ asset('front') }}/img/800x800.png" alt="Thumb">
+                                        </a>
+                                        @if ($produk->popular == 1)
+                                        <span class="onsale">Populer!</span>
+                                        @else
+                                        
+                                        @endif
+                                    </div>
                                 @endif
                             </div>
                             @else

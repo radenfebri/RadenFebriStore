@@ -11,7 +11,7 @@
                 <div class="col-lg-7 col-md-7">
                     <div class="content">
                         <!-- Tab Nav -->
-                        <input type="search">
+                        {{-- <input type="search"> --}}
                         <!-- End Tab Nav -->
                     </div>
                 </div>

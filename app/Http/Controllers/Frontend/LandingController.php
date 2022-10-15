@@ -9,6 +9,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Produk;
 use App\Models\Rating;
+use App\Models\Slide;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,8 +26,9 @@ class LandingController extends Controller
         $produks = Produk::latest()->where('is_active', 1)->limit(6)->get();
         $popular = Produk::latest()->where('popular', 1)->where('is_active', 1)->get();
         $ratings = Rating::all();
+        $slider = Slide::where('status', 1)->latest()->get();
 
-        return view('frontend.landing', compact('kategoriproduk', 'produks', 'popular', 'ratings'));
+        return view('frontend.landing', compact('kategoriproduk', 'produks', 'popular', 'ratings', 'slider'));
     }
 
 

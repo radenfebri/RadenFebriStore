@@ -53,8 +53,8 @@ class ProdukController extends Controller
     {
         $request->validate([
             'name' => 'required|unique:produks,name|min:3|max:50',
-            'small_description' => 'required|min:3|max:1000',
-            'description' => 'required|min:3|max:5000',
+            'small_description' => 'required|min:3|max:3000',
+            'description' => 'required|min:3|max:100000',
             'cover' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'image.*' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
             'kategori_id' => 'required',

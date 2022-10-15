@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\PesananController;
 use App\Http\Controllers\Backend\ProdukController;
 use App\Http\Controllers\Backend\RatingController as BackendRatingController;
 use App\Http\Controllers\Backend\RoleController;
+use App\Http\Controllers\Backend\SlideController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FavoritController;
 use App\Http\Controllers\Frontend\GoogleController;
@@ -145,6 +146,11 @@ Route::middleware(['has.role'])->middleware('auth', 'verified')->group(function 
     Route::get('rating/nonactive', [BackendRatingController::class, 'nonactive'])->name('rating.nonactive');
     Route::get('rating/{id}/edit', [BackendRatingController::class, 'edit'])->name('rating.edit');
     Route::put('rating/{id}/update', [BackendRatingController::class, 'update'])->name('rating.update');
+
+
+    // ROUTE SLIDER
+    Route::get('slider', [SlideController::class, 'index'])->name('slider.index');
+    Route::post('slider', [SlideController::class, 'store'])->name('slider.store');
 
     // ROUTE ROLE
     Route::get('role',  [RoleController::class, 'index'])->name('role.index');

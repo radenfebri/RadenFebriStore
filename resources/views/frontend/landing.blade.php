@@ -7,7 +7,6 @@
         <div class="container">
             <div id="bootcarousel" class="carousel carousel-fade slide animate_text" data-ride="carousel">
                 
-                <!-- Indicators for slides -->
                 <div class="carousel-indicator">
                     <div class="container">
                         <div class="row">
@@ -21,7 +20,6 @@
                     </div>
                 </div>
                 
-                <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row align-center">
@@ -59,10 +57,9 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
-                <!-- End Wrapper for slides -->
-                
-                
+
             </div>
         </div>
     </div>

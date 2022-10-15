@@ -41,7 +41,7 @@ class FavoritController extends Controller
 
     public function favoritview()
     {
-        $favorit = Favorit::where('user_id', Auth::id())->paginate(10);
+        $favorit = Favorit::where('user_id', Auth::id())->latest()->paginate(10);
         return view('frontend.favorit.index', compact('favorit'));
     }
 
