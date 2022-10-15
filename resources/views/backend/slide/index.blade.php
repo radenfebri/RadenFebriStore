@@ -25,9 +25,33 @@
                             
                             <div class="row mb-4">
                                 <div class="col-sm-12">
+                                    <label>Deskripsi Atas title<span class="text-danger">*</span></label>
+                                    <input name="title1" class="form-control @error('title1') is-invalid @enderror" id="post-title" value="{{ old('title1') }}" placeholder="Deskripsi Atas Title">
+                                    @error('title1')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-sm-12">
                                     <label>Title Slide<span class="text-danger">*</span></label>
-                                    <textarea id="summernote" name="title" class="form-control @error('title') is-invalid @enderror" id="post-title" placeholder="Atas Nama Bank">{{ old('title') }}</textarea>
-                                    @error('title')
+                                    <input name="title2" class="form-control @error('title2') is-invalid @enderror" id="post-title" value="{{ old('title2') }}" placeholder="Title Slide">
+                                    @error('title2')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-sm-12">
+                                    <label>Title Description<span class="text-danger">*</span></label>
+                                    <textarea name="title3" class="form-control @error('title3') is-invalid @enderror" id="post-title" value="{{ old('title3') }}" placeholder="Deskripsi Slide"></textarea>
+                                    @error('title3')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -168,7 +192,5 @@
         </div>    
     </div>
 </div>
-
-@include('backend.layouts.includes.script-summernote')
 
 @endsection

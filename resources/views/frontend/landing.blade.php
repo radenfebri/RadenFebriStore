@@ -12,8 +12,9 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <ol class="carousel-indicators theme">
-                                    <li data-target="#bootcarousel" data-slide-to="0" class="active"></li>
-                                    <li data-target="#bootcarousel" data-slide-to="1"></li>
+                                    @foreach ($slider as $key => $item)
+                                        <li data-target="#bootcarousel" data-slide-to="{{ $key }}" class="{{ $key == '0' ? 'active':'' }}"></li>
+                                    @endforeach
                                 </ol>
                             </div>
                         </div>
@@ -21,42 +22,70 @@
                 </div>
                 
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row align-center">
-                            <div class="col-lg-6">
-                                <div class="content">
-                                    <h2 data-animation="animated fadeInLeft">women fashion <strong>Top new winter collection</strong></h2>
-                                    <p class="animated fadeInUp">
-                                        Northward sportsmen education. Discovery incommode earnestly no he commanded was talent enough.
-                                    </p>
-                                    <a data-animation="animated fadeInDown" class="btn btn-theme effect btn-sm" href="#">Shop Now</a>
+                    @if ($slider->count() > 0)
+                        
+                        @foreach ($slider as $key => $item)
+                            <div class="carousel-item {{ $key == '0' ? 'active':'' }}">
+                                <div class="row align-center">
+                                    <div class="col-lg-6">
+                                        <div class="content">
+                                            <h2 data-animation="animated fadeInLeft">{{ $item->title1 }} <strong>{{$item->title2}}</strong></h2>
+                                            <p class="animated fadeInUp">
+                                                {{ $item->title3 }}
+                                            </p>
+                                            <a data-animation="animated fadeInDown" class="btn btn-theme effect btn-sm" href="{{ $item->link }}">{{ $item->button_text }}</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="thumb" data-animation="animated fadeInUp">
+                                            <img src="{{ asset('storage/'. $item->image ) }}" alt="Thumb">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="thumb" data-animation="animated fadeInUp">
-                                    <img src="{{ asset('front') }}/img/thumb/1.png" alt="Thumb">
+                        @endforeach
+
+                    @else
+                        
+                        <div class="carousel-item">
+                            <div class="row align-center">
+                                <div class="col-lg-6">
+                                    <div class="content">
+                                        <h2 data-animation="animated fadeInLeft">women fashion <strong>Top new winter collection</strong></h2>
+                                        <p class="animated fadeInUp">
+                                            Northward sportsmen education. Discovery incommode earnestly no he commanded was talent enough.
+                                        </p>
+                                        <a data-animation="animated fadeInDown" class="btn btn-theme effect btn-sm" href="#">Shop Now</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="thumb" data-animation="animated fadeInUp">
+                                        <img src="{{ asset('front') }}/img/thumb/1.png" alt="Thumb">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row align-center">
-                            <div class="col-lg-6">
-                                <div class="content">
-                                    <h2 data-animation="animated fadeInLeft">Supper value deals <strong>New fashion collection</strong></h2>
-                                    <p class="animated fadeInUp">
-                                        Northward sportsmen education. Discovery incommode earnestly no he commanded was talent enough.
-                                    </p>
-                                    <a data-animation="animated fadeInDown" class="btn btn-theme effect btn-sm" href="#">Shop Now</a>
+
+                        <div class="carousel-item active">
+                            <div class="row align-center">
+                                <div class="col-lg-6">
+                                    <div class="content">
+                                        <h2 data-animation="animated fadeInLeft">Supper value deals <strong>New fashion collection</strong></h2>
+                                        <p class="animated fadeInUp">
+                                            Northward sportsmen education. Discovery incommode earnestly no he commanded was talent enough.
+                                        </p>
+                                        <a data-animation="animated fadeInDown" class="btn btn-theme effect btn-sm" href="#">Shop Now</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="thumb" data-animation="animated fadeInUp">
-                                    <img src="{{ asset('front') }}/img/thumb/2.png" alt="Thumb">
+                                <div class="col-lg-6">
+                                    <div class="thumb" data-animation="animated fadeInUp">
+                                        <img src="{{ asset('front') }}/img/thumb/2.png" alt="Thumb">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+
+                    @endif
 
                 </div>
 

@@ -10,7 +10,9 @@ class Slide extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
+        'title1',
+        'title2',
+        'title3',
         'link',
         'image',
         'button_text',

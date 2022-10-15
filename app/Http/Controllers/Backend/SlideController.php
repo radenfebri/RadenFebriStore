@@ -24,7 +24,6 @@ class SlideController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|string|max:1000',
             'link' => 'required',
             'image' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'button_text' => 'required|min:3|max:20',
@@ -35,7 +34,9 @@ class SlideController extends Controller
         $imageName = date(now()->format('d-m-Y-H-i-s')) . '_' . $request->file('image')->getClientOriginalName();
         $image = $request->file('image')->storeAs('image-slider', $imageName);
         Slide::create([
-            'title' => $request->title,
+            'title1' => $request->title1,
+            'title2' => $request->title2,
+            'title3' => $request->title3,
             'link' => $request->link,
             'image' => $image,
             'button_text' => $request->button_text,
