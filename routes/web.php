@@ -173,7 +173,7 @@ Route::middleware(['has.role'])->middleware('auth', 'verified')->group(function 
 });
 
 
-Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
-Route::get('callback/google', [GoogleController::class, 'handleCallback']);
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
 

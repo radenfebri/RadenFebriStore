@@ -67,10 +67,12 @@
     
     <div class="d-flex justify-content-center">
         <div class="mb-4">
-            <button class="btn  btn-social-login w-100 ">
-                <img src="{{ asset('back') }}/src/assets/img/google-gmail.svg" alt="" class="img-fluid">
-                <span class="btn-text-inner">Google</span>
-            </button>
+            <a href="{{ route('google.login') }}">
+                <button class="btn  btn-social-login w-100 ">
+                    <img src="{{ asset('back') }}/src/assets/img/google-gmail.svg" alt="" class="img-fluid">
+                    <span class="btn-text-inner">Google</span>
+                </button>
+            </a>
         </div>
     </div>
     
