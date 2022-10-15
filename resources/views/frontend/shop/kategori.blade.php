@@ -69,7 +69,7 @@
                 <!-- Tab Single -->
                 <div id="grid-view" class="tab-pane fade active show">
                     <ul class="vt-products columns-4">
-                        @foreach ($kategoriproduk as $item)
+                        @foreach ($allkategori as $item)
                             <li class="product produk_data">
                                 <div class="product-contents">
                                     <div class="product-image">

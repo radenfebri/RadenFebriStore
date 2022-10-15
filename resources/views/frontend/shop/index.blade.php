@@ -53,7 +53,7 @@
                 <div class="col-lg-5 col-md-5 text-right">
                     <p>
                         
-                        <span><b>Jumlah Produk Semua : <span class="text-primary">{{ $all_produk->count() }}</span></b></span>
+                        <span><b>Jumlah Produk Semua : <span class="text-primary">{{ $allproduk->count() }}</span></b></span>
                     </p>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                 <!-- Tab Single -->
                 <div id="grid-view" class="tab-pane fade active show">
                     <ul class="vt-products columns-4">
-                        @foreach ($produks as $item)
+                        @foreach ($allproduk as $item)
                         <li class="product produk_data">
                             <div class="product-contents">
                                 <input type="hidden" value="{{ $item->id }}" class="prod_id" id="">

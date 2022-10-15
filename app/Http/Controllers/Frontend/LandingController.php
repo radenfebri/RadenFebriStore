@@ -83,10 +83,10 @@ class LandingController extends Controller
                 ->where('name', 'LIKE', '%' . $keyword . '%')
                 ->orwhere('small_description', 'LIKE', '%' . $keyword . '%')
                 ->paginate(20);
-            $all_produk = Produk::where('is_active', 1)->latest()->get();
+            $allproduk = Produk::where('is_active', 1)->latest()->get();
             $ratings = Rating::all();
 
-            return view('frontend.shop.index', compact('produks', 'kategoriproduk', 'all_produk', 'keyword', 'ratings'));
+            return view('frontend.shop.index', compact('produks', 'kategoriproduk', 'allproduk', 'keyword', 'ratings'));
         } else {
             return back();
         }
@@ -104,7 +104,8 @@ class LandingController extends Controller
                 ->orwhere('description', 'LIKE', '%' . $keyword . '%')
                 ->latest()->paginate(20);
 
-            return view('frontend.shop.kategori', compact('kategoriproduk', 'keyword'));
+            $allkategori = KategoriProduk::where('is_active', 1)->latest()->get();
+            return view('frontend.shop.kategori', compact('kategoriproduk', 'keyword', 'allkategori'));
         } else {
             return back();
         }

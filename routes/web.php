@@ -18,6 +18,7 @@ use App\Http\Controllers\Frontend\GoogleController;
 use App\Http\Controllers\Frontend\KeranjangController;
 use App\Http\Controllers\Frontend\LandingController;
 use App\Http\Controllers\Frontend\RatingController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -151,6 +152,9 @@ Route::middleware(['has.role'])->middleware('auth', 'verified')->group(function 
     // ROUTE SLIDER
     Route::get('slider', [SlideController::class, 'index'])->name('slider.index');
     Route::post('slider', [SlideController::class, 'store'])->name('slider.store');
+    Route::get('slider/{id}/edit', [SlideController::class, 'edit'])->name('slider.edit');
+    Route::put('slider/{id}/update', [SlideController::class, 'update'])->name('slider.update');
+    Route::get('slider/destroy/{id}', [SlideController::class, 'destroy'])->name('slider.destroy');
 
     // ROUTE ROLE
     Route::get('role',  [RoleController::class, 'index'])->name('role.index');
@@ -182,4 +186,13 @@ Route::middleware(['has.role'])->middleware('auth', 'verified')->group(function 
     Route::get('user', [ManajemenUsersController::class, 'index'])->name('user.index');
     Route::get('user/change-password/{id}/edit', [ManajemenUsersController::class, 'change_password'])->name('change-password');
     Route::put('user/change-password/{id}/edit', [ManajemenUsersController::class, 'update_password'])->name('update-password');
+});
+
+
+Route::get('/website-up', function () {
+    return Artisan::call('up');
+});
+
+Route::get('/website-down', function () {
+    return Artisan::call("down --secret=radenfebristore");
 });

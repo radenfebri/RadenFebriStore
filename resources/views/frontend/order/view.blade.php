@@ -162,7 +162,7 @@
                                     <div class="card-body">
                                         <center>
                                             <div class="mt-3 mb-2">
-                                                <span><label for=""><b>Scan Disini</b></label></span>
+                                                <span><label for=""><b>Kalian Bisa langsung Scan disini / <a href="{{ asset('storage/'. $metode->image ) }}" download alt="{{ $metode->name }}"><i>Download disni</i></a></b></label></span>
                                                 
                                             </div>
                                             <img src="{{ asset('storage/'. $metode->image ) }}" alt="Product" width="40%" height="40%">
