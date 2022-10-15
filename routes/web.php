@@ -65,6 +65,12 @@ Route::get('detail-kategori/{slug}', [LandingController::class, 'detailkategori'
 Route::get('produk-list', [LandingController::class, 'search'])->name('search');
 Route::post('searchproduk', [LandingController::class, 'searchproduk'])->name('searchproduk');
 
+// SINGLE SIGN ON GOOGLE
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+Route::get('auth/google/update-password', [GoogleController::class, 'update_password_google'])->name('google.update-password');
+Route::post('auth/google/update-password', [GoogleController::class, 'update_data_password_google'])->name('update_data_password_google');
+
 Auth::routes(['verify' => true]);
 
 Route::middleware('auth', 'verified')->group(function () {
@@ -171,9 +177,3 @@ Route::middleware(['has.role'])->middleware('auth', 'verified')->group(function 
     Route::get('user/change-password/{id}/edit', [ManajemenUsersController::class, 'change_password'])->name('change-password');
     Route::put('user/change-password/{id}/edit', [ManajemenUsersController::class, 'update_password'])->name('update-password');
 });
-
-
-Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
-Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
-
-

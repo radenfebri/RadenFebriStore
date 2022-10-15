@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class GoogleController extends Controller
 {
@@ -15,7 +16,6 @@ class GoogleController extends Controller
     {
         return Socialite::driver('google')->redirect();
     }
-
 
 
     public function handleGoogleCallback()
@@ -38,15 +38,37 @@ class GoogleController extends Controller
                     'google_id' => $user->id,
                     'password' => encrypt('default123')
                 ]);
-
                 $newUser->assignRole('User');
 
                 Auth::login($newUser);
 
-                return redirect()->intended('/');
+                return redirect()->route('google.update-password');
             }
         } catch (Exception $e) {
             dd($e->getMessage());
         }
+    }
+
+
+    public function update_password_google()
+    {
+        return view('frontend.google.update-password');
+    }
+
+
+
+
+    public function update_data_password_google(Request $request)
+    {
+        $request->validate([
+            'password' => 'required|confirmed|min:8',
+        ]);
+
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->password)
+        ]);
+
+        toast('Password Berhasil Diubah', 'success');
+        return redirect()->route('landing.index');
     }
 }
