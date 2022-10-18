@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url({{ $kategoriproduk->image }});">
+<div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url({{ asset('storage/'.$kategoriproduk->image) }});">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">

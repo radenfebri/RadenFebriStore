@@ -21,6 +21,7 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $fillable = [
         'name',
         'email',
+        'status',
         'password',
         'no_hp',
         'google_id'
@@ -46,7 +47,7 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
 
-    
+
     protected $appends = [
         'profile_photo_url',
     ];

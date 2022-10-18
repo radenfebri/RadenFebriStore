@@ -131,7 +131,6 @@
                                         <th class="checkbox-column text-center"> Record Id </th>
                                         <th class="text-center">Image</th>
                                         <th>Link & Button</th>
-                                        <th>Preview</th>
                                         <th>Status</th>
                                         <th class="text-center dt-no-sorting">Action</th>
                                     </tr>
@@ -149,7 +148,6 @@
                                             @endif
                                         </td>
                                         <td><a class="btn btn-sm btn-primary" href="{{ $item->link }}" target="_blank">{{ $item->button_text }}</a></td>
-                                        <td><a class="btn btn-sm btn-warning" href="#">Preview</a></td>
                                         @if ($item->status == 1)
                                         <td class="text-center"><span class="shadow-none badge badge-success">Active</span></td>
                                         @else

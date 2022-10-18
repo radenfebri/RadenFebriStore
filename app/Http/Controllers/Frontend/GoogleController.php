@@ -31,6 +31,16 @@ class GoogleController extends Controller
                 Auth::login($finduser);
 
                 return redirect()->intended('/');
+            } elseif ($finduser->google_id == null) {
+
+                $non_google_id = User::where('email', $user->email)->where('name', $user->name)->exist();
+                $non_google_id = User::create([
+                    'google_id' => $user->id,
+                ]);
+
+                $non_google_id->save();
+
+                Auth::login($non_google_id);
             } else {
                 $newUser = User::create([
                     'name' => $user->name,
@@ -45,7 +55,7 @@ class GoogleController extends Controller
                 return redirect()->route('google.update-password');
             }
         } catch (Exception $e) {
-            dd($e->getMessage());
+            return redirect()->route('login')->with('error', 'Akun anda login tidak menggunakan gmail');
         }
     }
 

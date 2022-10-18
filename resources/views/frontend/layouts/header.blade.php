@@ -99,8 +99,8 @@
                         @else
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><i class="fas fa-user"></i> {{ Auth::user()->name }}</a>
                         <ul class="dropdown-menu">
-                            <li class="d-xl-none d-sm-none"><a href="{{ route('favorit.view') }}">Favorit <span class="badge cart-count">0</span></a></li>
-                            <li><a href="{{ route('myorder.index') }}">Order <span class="badge order-count">0</span></a></li>
+                            <li class="d-xl-none d-sm-none"><a href="{{ route('favorit.view') }}">Favorit <span class="badge wish-count" style="background-color: #f35a38;">0</span></a></li>
+                            <li><a href="{{ route('myorder.index') }}">Order <span class="badge order-count" style="background-color: #f35a38;">0</span></a></li>
                             <li><a href="{{ route('settingprofile') }}">Setting</a></li>
                             @if (Route::has('logout'))
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
