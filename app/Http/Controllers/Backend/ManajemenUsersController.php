@@ -38,15 +38,24 @@ class ManajemenUsersController extends Controller
             'password_confirmation' => 'required|min:8|string|same:password',
         ]);
 
-        // dd($user);
-
         $user = User::findOrFail($user);
-        // dd($user);
         $user->update([
             'password' => Hash::make($request->password),
         ]);
 
         toast('Password berhasil diubah', 'success');
+        return redirect()->route('user.index');
+    }
+
+
+    public function status_akun($id)
+    {
+        $user = User::findOrFail(decrypt($id));
+        $user->update([
+            'status' => $user->status == 1 ? 0 : 1,
+        ]);
+
+        toast('Status akun berhasil diubah', 'success');
         return redirect()->route('user.index');
     }
 }

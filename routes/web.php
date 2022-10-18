@@ -42,6 +42,9 @@ Route::get('load-wishlist-data', [FavoritController::class, 'favoritcount'])->na
 // ORDER COUNT
 Route::get('load-order-data', [CheckoutController::class, 'ordercount'])->name('ordercount');
 
+// ORDER COUNT
+Route::get('load-pesanan-data', [PesananController::class, 'pesanancount'])->name('pesanancount');
+
 // REMOVE CART LIST
 Route::post('delete-cart-item', [KeranjangController::class, 'deleteproduk'])->name('deletecart');
 
@@ -186,6 +189,7 @@ Route::middleware(['has.role'])->middleware('auth', 'verified')->group(function 
     Route::get('user', [ManajemenUsersController::class, 'index'])->name('user.index');
     Route::get('user/change-password/{id}/edit', [ManajemenUsersController::class, 'change_password'])->name('change-password');
     Route::put('user/change-password/{id}/edit', [ManajemenUsersController::class, 'update_password'])->name('update-password');
+    Route::get('user/{id}/update', [ManajemenUsersController::class, 'status_akun'])->name('status-akun');
 });
 
 

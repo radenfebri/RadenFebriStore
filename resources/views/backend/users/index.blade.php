@@ -30,6 +30,7 @@
                                         <th class="checkbox-column dt-no-sorting"> Record no. </th>
                                         <th>Name</th>
                                         <th>Email</th>
+                                        <th>Status</th>
                                         <th>Role</th>
                                         <th>Login</th>
                                         <th class="text-center dt-no-sorting">Action</th>
@@ -41,6 +42,13 @@
                                         <td class="checkbox-column text-center"> {{ $no + 1 }} </td>
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->email }}</td>
+                                        <td>
+                                            @if ($item->status == 1)
+                                                <span class="badge badge-success">Active</span>
+                                            @else
+                                                <span class="badge badge-danger">Inactive</span>
+                                            @endif
+                                        </td>
                                         <td>{{ implode(', ', $item->getRoleNames()->toArray() ) }}</td>
                                         <td>  
                                             @if ($item->email == 'febriye12@gmail.com')
@@ -49,7 +57,7 @@
                                             @env('local')
                                             <span class="shadow-none badge badge-primary">
                                                 <x-login-link :user-attributes="['role' => '{{ implode(', ', $item->getRoleNames()->toArray() ) }}']" email="{{ $item->email }}" target="_blank" label="Login as {{ $item->name }}"/>
-                                                </span>
+                                            </span>
                                                 @endenv
                                                 @endif
                                                 
@@ -65,7 +73,11 @@
                                                     
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                                         <a class="dropdown-item" href="{{ route('change-password', encrypt($item->id) ) }}">Change Password</a>
-                                                        <a class="dropdown-item" href="#">Delete User</a>
+                                                        @if ($item->status == 1)
+                                                            <a class="dropdown-item" valuue="0" href="{{ route('status-akun', encrypt($item->id)) }}">Disable User</a>
+                                                        @else
+                                                            <a class="dropdown-item" value="1" href="{{ route('status-akun', encrypt($item->id)) }}">Enable User</a>
+                                                        @endif
                                                     </div>
                                                 </div>
                                                 @endif

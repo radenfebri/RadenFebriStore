@@ -2,6 +2,7 @@ $(document).ready(function () {
     loadcart();
     loadorder();
     loadwishlist();
+    loadpesanan();
 
     function loadcart() {
         $.ajax({
@@ -32,6 +33,18 @@ $(document).ready(function () {
             success: function (response) {
                 $(".order-count").html("");
                 $(".order-count").html(response.count);
+            },
+        });
+    }
+
+
+    function loadpesanan() {
+        $.ajax({
+            method: "GET",
+            url: "/load-pesanan-data",
+            success: function (response) {
+                $(".pesanan-count").html("");
+                $(".pesanan-count").html(response.count);
             },
         });
     }
@@ -158,36 +171,6 @@ $(document).ready(function () {
         });
     });
 
-    // $(document).on("click", ".increment-btn", function (e) {
-    //     e.preventDefault();
-
-    //     var inc_value = $(this)
-    //         .closest(".product_data")
-    //         .find(".qty-input")
-    //         .val();
-    //     var value = parseInt(inc_value, 10);
-    //     value = isNaN(value) ? 0 : value;
-    //     if (value < 10) {
-    //         value++;
-    //         $(this).closest(".product_data").find(".qty-input").val(value);
-    //     }
-    // });
-
-    // $(document).on("click", ".decrement-btn", function (e) {
-    //     e.preventDefault();
-
-    //     var dec_value = $(this)
-    //         .closest(".product_data")
-    //         .find(".qty-input")
-    //         .val();
-    //     var value = parseInt(dec_value, 10);
-    //     value = isNaN(value) ? 0 : value;
-    //     if (value > 1) {
-    //         value--;
-    //         $(this).closest(".product_data").find(".qty-input").val(value);
-    //     }
-    // });
-
     $(document).on("click", ".delete-cart-item", function (e) {
         e.preventDefault();
 
@@ -306,24 +289,4 @@ $(document).ready(function () {
             },
         });
     });
-
-    // $(document).on("click", ".changeQuantity", function (e) {
-    //     e.preventDefault();
-
-    //     var prod_id = $(this).closest(".product_data").find(".prod_id").val();
-    //     var qty = $(this).closest(".product_data").find(".qty-input").val();
-    //     data = {
-    //         prod_id: prod_id,
-    //         prod_qty: qty,
-    //     };
-    //     $.ajax({
-    //         method: "POST",
-    //         url: "update-cart",
-    //         data: data,
-    //         success: function (response) {
-    //             $(".produk").load(location.href + " .produk");
-    //             // swal("", response.status, "info");
-    //         },
-    //     });
-    // });
 });

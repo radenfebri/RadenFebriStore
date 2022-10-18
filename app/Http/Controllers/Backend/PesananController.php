@@ -45,7 +45,15 @@ class PesananController extends Controller
         $to = $order->email;
         dispatch(new JobPesananDiterima($order, $to));
 
-        toast('Pesanan berhasil diupdate','success');
+        toast('Pesanan berhasil diupdate', 'success');
         return redirect()->route('pesanan.index');
+    }
+
+
+    public function pesanancount()
+    {
+        $orders = Order::where('status', '0')->count();
+        return response()->json(['count' => $orders]);
+        return view('backend.layouts.sidebar', compact('orders'));
     }
 }

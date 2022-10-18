@@ -14,6 +14,8 @@
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="{{ asset('back') }}/src/plugins/src/table/datatable/datatables.js"></script>
 <script src="{{ asset('back') }}/src/plugins/src/tagify/tagify.min.js"></script>
+<script src="{{ asset('front') }}/js/custom.js"></script>
+
 
 
 <!-- END PAGE LEVEL SCRIPTS -->

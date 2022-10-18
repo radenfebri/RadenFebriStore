@@ -10,7 +10,7 @@
                     </a>
                 </div>
                 <div class="nav-item theme-text">
-                    <a href="{{ route('dashboard') }}" class="nav-link"> RFS STORE </a>
+                    <a href="{{ route('dashboard') }}" class="nav-link"> RFS DIGITAL </a>
                 </div>
             </div>
             <div class="nav-item sidebar-toggle">
@@ -41,7 +41,7 @@
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                         <span>Manajemen Pesanan</span>
-                        {{-- <span class="badge badge-primary sidebar-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle badge-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg> 1</span> --}}
+                            <span class="badge badge-primary sidebar-label pesanan-count">0</span>
                     </div>
                 </a>
             </li>

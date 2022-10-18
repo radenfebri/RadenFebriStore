@@ -54,12 +54,12 @@
                             <span class="badge wish-count">0</span>
                         </a>
                     </li>
-                    <li class="login">
+                    {{-- <li class="login">
                         <a href="{{ route('cart.view') }}" class="dropdown-toggle" data-toggle="dropdown" >
                             <i class="fa fa-bell"></i>
                             <span class="badge">0</span>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>  
             @endguest
