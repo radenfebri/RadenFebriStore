@@ -80,7 +80,7 @@
                                     <label for="product-images">Cover Saat ini:</label>
                                     <div class="multiple-file-upload"> 
                                         @if ($kategoriproduk->image)
-                                            <img src="{{ asset('storage/'. $kategoriproduk->image) }}" class="rounded" width="245px" height="245px" alt="">
+                                            <img src="{{ asset('storage/'. $kategoriproduk->image) }}" loading="lazy" class="rounded" width="245px" height="245px" alt="">
                                         @else
                                             Cover Masih Kosong
                                         @endif

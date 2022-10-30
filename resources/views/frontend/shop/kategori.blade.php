@@ -80,9 +80,9 @@
                                         @endif
                                         <a href="{{ route('detail.kategori', $item->slug) }}">
                                             @if ($item->image == null)
-                                                <img src="{{ asset('front') }}/img/800x800.png" alt="Product">
+                                                <img src="{{ asset('front') }}/img/800x800.png" loading="lazy" alt="Product">
                                             @else
-                                                <img src="{{ asset('storage/'.$item->image) }}" alt="Product Image">
+                                                <img src="{{ asset('storage/'.$item->image) }}" loading="lazy" alt="Product Image">
                                             @endif
                                         </a>
                                         <div class="shop-action">

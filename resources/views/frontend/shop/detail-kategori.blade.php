@@ -65,9 +65,9 @@
                                     @endif
                                     <a href="{{ route('detail.produk', $item->slug ) }}">
                                         @if ($item->cover == null)
-                                        <img src="{{ asset('front') }}/img/800x800.png" alt="Product">
+                                        <img src="{{ asset('front') }}/img/800x800.png" loading="lazy" alt="Product">
                                         @else
-                                        <img src="{{ asset('storage/'.$item->cover) }}" alt="Product">
+                                        <img src="{{ asset('storage/'.$item->cover) }}" loading="lazy" alt="Product">
                                         @endif
                                     </a>
                                     <div class="shop-action">

@@ -38,7 +38,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="thumb" data-animation="animated fadeInUp">
-                                    <img src="{{ asset('storage/'. $item->image ) }}" alt="Thumb">
+                                    <img src="{{ asset('storage/'. $item->image ) }}" loading="lazy" alt="{{ $item->name }}">
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="thumb" data-animation="animated fadeInUp">
-                                    <img src="{{ asset('front') }}/img/thumb/1.png" alt="Thumb">
+                                    <img src="{{ asset('front') }}/img/thumb/1.png" loading="lazy" alt="Thumb">
                                 </div>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="thumb" data-animation="animated fadeInUp">
-                                    <img src="{{ asset('front') }}/img/thumb/2.png" alt="Thumb">
+                                    <img src="{{ asset('front') }}/img/thumb/2.png" loading="lazy" alt="Thumb">
                                 </div>
                             </div>
                         </div>
@@ -139,9 +139,9 @@
                             @endif
                             <a href="{{ route('detail.produk', $item->slug ) }}">
                                 @if ($item->cover == null)
-                                <img src="{{ asset('front') }}/img/800x800.png" alt="Product">
+                                <img src="{{ asset('front') }}/img/800x800.png" loading="lazy" alt="Product">
                                 @else
-                                <img src="{{ asset('storage/'.$item->cover) }}" alt="Product">
+                                <img src="{{ asset('storage/'.$item->cover) }}" loading="lazy" alt="Product">
                                 @endif
                             </a>
                             <div class="shop-action">
@@ -263,9 +263,9 @@
                     <div class="item">
                         <a href="{{ route('detail.kategori', $item->slug) }}">
                             @if ($item->image == null)
-                            <img src="{{ asset('front') }}/img/category/phone.png" alt="Thumb">
+                            <img src="{{ asset('front') }}/img/category/phone.png" loading="lazy" alt="Thumb">
                             @else
-                            <img src="{{ asset('storage/'.$item->image) }}" alt="Thumb">
+                            <img src="{{ asset('storage/'.$item->image) }}" loading="lazy" alt="Thumb">
                             @endif
                             <h6>{{ $item->name }}</h6>
                         </a>
@@ -315,9 +315,9 @@
                                 @endif
                                 <a href="{{ route('detail.produk', $item->slug ) }}">
                                     @if ($item->cover == null)
-                                    <img src="{{ asset('front') }}/img/800x800.png" alt="Product">
+                                    <img src="{{ asset('front') }}/img/800x800.png" loading="lazy" alt="Product">
                                     @else
-                                    <img src="{{ asset('storage/'.$item->cover) }}" alt="Product">
+                                    <img src="{{ asset('storage/'.$item->cover) }}" loading="lazy" alt="Product">
                                     @endif
                                 </a>
                                 <div class="shop-action">
@@ -449,7 +449,7 @@
                 <div class="col-lg-4 col-md-6 single-item">
                     <div class="item">
                         <div class="thumb">
-                            <img src="{{ asset('front') }}/img/1500x1000.png" alt="Thumb">
+                            <img src="{{ asset('front') }}/img/1500x1000.png" loading="lazy" alt="Thumb">
                             <div class="date">15 Jul, 2021</div>
                         </div>
                         <div class="info">
@@ -459,7 +459,7 @@
                             <div class="footer-meta">
                                 <ul>
                                     <li>
-                                        <img src="{{ asset('front') }}/img/100x100.png" alt="Author">
+                                        <img src="{{ asset('front') }}/img/100x100.png" loading="lazy" alt="Author">
                                         <span>By </span>
                                         <a href="#">John Baus</a>
                                     </li>
@@ -479,7 +479,7 @@
                 <div class="col-lg-4 col-md-6 single-item">
                     <div class="item">
                         <div class="thumb">
-                            <img src="{{ asset('front') }}/img/1500x1000.png" alt="Thumb">
+                            <img src="{{ asset('front') }}/img/1500x1000.png" loading="lazy" alt="Thumb">
                             <div class="date">26 Aug, 2021</div>
                         </div>
                         <div class="info">
@@ -489,7 +489,7 @@
                             <div class="footer-meta">
                                 <ul>
                                     <li>
-                                        <img src="{{ asset('front') }}/img/100x100.png" alt="Author">
+                                        <img src="{{ asset('front') }}/img/100x100.png" loading="lazy" alt="Author">
                                         <span>By </span>
                                         <a href="#">Mun Paul</a>
                                     </li>
@@ -509,7 +509,7 @@
                 <div class="col-lg-4 col-md-6 single-item">
                     <div class="item">
                         <div class="thumb">
-                            <img src="{{ asset('front') }}/img/1500x1000.png" alt="Thumb">
+                            <img src="{{ asset('front') }}/img/1500x1000.png" loading="lazy" alt="Thumb">
                             <div class="date">18 Sep, 2021</div>
                         </div>
                         <div class="info">
@@ -519,7 +519,7 @@
                             <div class="footer-meta">
                                 <ul>
                                     <li>
-                                        <img src="{{ asset('front') }}/img/100x100.png" alt="Author">
+                                        <img src="{{ asset('front') }}/img/100x100.png" loading="lazy" alt="Author">
                                         <span>By </span>
                                         <a href="#">Hesam Doe</a>
                                     </li>

@@ -57,7 +57,7 @@
                                     <div class="multiple-file-upload"> 
                                         @if ($images->count() > 0)
                                         @foreach ($images as $item)
-                                        <img src="{{ asset('storage/images-produk/'. $item->image) }}" class="rounded mr-2" width="150px" height="150px" alt="{{ $produks->name }}">
+                                        <img src="{{ asset('storage/images-produk/'. $item->image) }}" loading="lazy" class="rounded mr-2" width="150px" height="150px" alt="{{ $produks->name }}">
                                         @endforeach
                                         @else
                                         Image Kosong
@@ -126,7 +126,7 @@
                                         <label for="product-images"><b>Cover Saat ini:</b></label>
                                         <div class="multiple-file-upload"> 
                                             @if ($produks->cover)
-                                            <img src="{{ asset('storage/'. $produks->cover) }}" class="rounded" width="245px" height="245px" alt="{{ $produks->name }}">
+                                            <img src="{{ asset('storage/'. $produks->cover) }}" loading="lazy" class="rounded" width="245px" height="245px" alt="{{ $produks->name }}">
                                             @else
                                             Cover Masih Kosong
                                             @endif

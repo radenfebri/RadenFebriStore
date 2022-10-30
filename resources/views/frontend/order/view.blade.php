@@ -47,9 +47,9 @@
                                 </div>
                                 <div class="col-md-4">
                                     @if ($item->produks->cover)
-                                    <img src="{{ asset('storage/'. $item->produks->cover) }}" style="width: 50px; height: 50px;" alt="{{ $item->name }}">
+                                    <img src="{{ asset('storage/'. $item->produks->cover) }}" style="width: 50px; height: 50px;" loading="lazy" alt="{{ $item->name }}">
                                     @else
-                                    <img src="{{ asset('front') }}/img/800x800.png"  style="width: 50px; height: 50px;" alt="{{ $item->name }}">
+                                    <img src="{{ asset('front') }}/img/800x800.png"  style="width: 50px; height: 50px;" loading="lazy" alt="{{ $item->name }}">
                                     @endif
                                 </div>
                                 <div>
@@ -96,7 +96,7 @@
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <span><b>{{ $metode->kategori }}</b></span>
                                                 <div class="icons">
-                                                    <img src="{{ asset('storage/'. $metode->image ) }}" width="30">
+                                                    <img src="{{ asset('storage/'. $metode->image ) }}" loading="lazy" width="30">
                                                 </div>
                                                 
                                             </div>
@@ -152,7 +152,7 @@
                                                 
                                                 <span><b>Qris / E-Wallet</b></span>
                                                 <div class="icons">
-                                                    <img src="{{ asset('storage/'. $metode->image ) }}" width="30">
+                                                    <img src="{{ asset('storage/'. $metode->image ) }}" loading="lazy" width="30">
                                                 </div>    
                                             </div>
                                         </button>
@@ -165,7 +165,7 @@
                                                 <span><label for=""><b>Kalian Bisa langsung Scan disini / <a href="{{ asset('storage/'. $metode->image ) }}" download alt="{{ $metode->name }}"><i>Download disni</i></a></b></label></span>
                                                 
                                             </div>
-                                            <img src="{{ asset('storage/'. $metode->image ) }}" alt="Product" width="40%" height="40%">
+                                            <img src="{{ asset('storage/'. $metode->image ) }}" alt="Product" loading="lazy" width="40%" height="40%">
                                             <div class="mt-3 mb-2">
                                                 <span><label for=""><b><i class="fas fa-store"></i> {{ $metode->atas_nama }}</b></label></span><br>
                                                 <label for=""><i>Note: Bayar sesuai total harga yang sudah tertera <b class="text-danger">Rp. {{ number_format($orders->total_price) }}</b></i></label>

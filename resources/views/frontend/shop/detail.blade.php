@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url({{ asset('front') }}/img/2440x1578.png);">
+<div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url({{ asset('storage/'. $produk->cover) }});">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
@@ -32,7 +32,7 @@
                                     @foreach ($images as $key => $item)
                                         <div class="carousel-item product-item {{ $key == '0' ? 'active':'' }}">
                                             <a href="{{ asset('storage/images-produk/'. $item->image) }}" class="item popup-gallery">
-                                                <img src="{{ asset('storage/images-produk/'. $item->image) }}" alt="{{ $produk->name }}">
+                                                <img src="{{ asset('storage/images-produk/'. $item->image) }}" loading="lazy" alt="{{ $produk->name }}">
                                             </a>
                                             @if ($produk->popular == 1)
                                             <span class="onsale">Populer!</span>
@@ -44,7 +44,7 @@
                                 @else
                                     <div class="carousel-item product-item active">
                                         <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
-                                            <img src="{{ asset('front') }}/img/800x800.png" alt="Thumb">
+                                            <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Thumb">
                                         </a>
                                         @if ($produk->popular == 1)
                                         <span class="onsale">Populer!</span>
@@ -58,7 +58,7 @@
                             <div class="carousel-inner item-box">
                                 <div class="carousel-item product-item active">
                                     <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
-                                        <img src="{{ asset('front') }}/img/800x800.png" alt="Thumb">
+                                        <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Thumb">
                                     </a>
                                     @if ($produk->popular == 1)
                                     <span class="onsale">Populer!</span>
@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="carousel-item product-item">
                                     <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
-                                        <img src="{{ asset('front') }}/img/800x800.png" alt="Thumb">
+                                        <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Thumb">
                                     </a>
                                     @if ($produk->popular == 1)
                                     <span class="onsale">Populer!</span>
@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="carousel-item product-item">
                                     <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
-                                        <img src="{{ asset('front') }}/img/800x800.png" alt="Thumb">
+                                        <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Thumb">
                                     </a>
                                     @if ($produk->popular == 1)
                                     <span class="onsale">Populer!</span>
@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="carousel-item product-item">
                                     <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
-                                        <img src="{{ asset('front') }}/img/800x800.png" alt="Thumb">
+                                        <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Thumb">
                                     </a>
                                     @if ($produk->popular == 1)
                                     <span class="onsale">Populer!</span>
@@ -106,12 +106,12 @@
                                     @if ($images->count() > 0) 
                                     @foreach ($images as $key => $item)
                                     <li data-target="#timeline-carousel" data-slide-to="{{ $key }}" class="active">
-                                        <img src="{{ asset('storage/images-produk/'. $item->image) }}" alt="{{ $produk->name }}">
+                                        <img src="{{ asset('storage/images-produk/'. $item->image) }}" loading="lazy"  alt="{{ $produk->name }}">
                                     </li>
                                     @endforeach
                                     @else
                                     <li data-target="#timeline-carousel" data-slide-to="0" class="active">
-                                        <img src="{{ asset('front') }}/img/800x800.png" alt="{{ $produk->name }}">
+                                        <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="{{ $produk->name }}">
                                     </li>
                                     @endif
                                 </div>
@@ -240,7 +240,7 @@
                                 @forelse ($ratings as $item)
                                 <div class="item">
                                     <div class="thumb">
-                                        <img src="{{ asset('front') }}/img/user.jpeg" alt="Thumb">
+                                        <img src="{{ asset('front') }}/img/user.jpeg" loading="lazy"  alt="Thumb">
                                     </div>
                                     <div class="info">
                                         <div class="rating">
@@ -411,9 +411,9 @@
                                     @endif
                                     <a href="{{ route('detail.produk', $item->slug ) }}">
                                         @if ($item->cover == null)
-                                        <img src="{{ asset('front') }}/img/800x800.png" alt="Product">
+                                        <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Product">
                                         @else
-                                        <img src="{{ asset('storage/'.$item->cover) }}" alt="Product">
+                                        <img src="{{ asset('storage/'.$item->cover) }}" loading="lazy"  alt="Product">
                                         @endif
                                     </a>
                                     <div class="shop-action">

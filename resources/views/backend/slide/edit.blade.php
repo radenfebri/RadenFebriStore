@@ -107,7 +107,7 @@
                                     <label for="product-images">Cover Saat ini:</label>
                                     <div class="multiple-file-upload"> 
                                         @if ($slide->image)
-                                            <img src="{{ asset('storage/'. $slide->image) }}" class="rounded" width="245px" height="245px" alt="">
+                                            <img src="{{ asset('storage/'. $slide->image) }}" loading="lazy" class="rounded" width="245px" height="245px" alt="">
                                         @else
                                             Cover Masih Kosong
                                         @endif

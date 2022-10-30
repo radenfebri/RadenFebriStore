@@ -76,7 +76,7 @@
                                                 <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
                                             </svg>
                                         </a>
-                                        <img src="{{ asset('storage/images-produk/'. $item->image) }}" class="rounded mr-5" width="150px" height="150px" alt="{{ $produks->name }}">
+                                        <img src="{{ asset('storage/images-produk/'. $item->image) }}" loading="lazy" class="rounded mr-5" width="150px" height="150px" alt="{{ $produks->name }}">
                                         </div>
                                         @endforeach
                                         @else
@@ -167,7 +167,7 @@
                                     <br>
                                     <div class="multiple-file-upload"> 
                                         @if ($produks->cover)
-                                        <img src="{{ asset('storage/'. $produks->cover) }}" class="rounded" width="245px" height="245px" alt="{{ $produks->name }}">
+                                        <img src="{{ asset('storage/'. $produks->cover) }}" loading="lazy" class="rounded" width="245px" height="245px" alt="{{ $produks->name }}">
                                         @else
                                         Cover Masih Kosong
                                         @endif
