@@ -23,7 +23,7 @@
                     <div class="info">
                         <ul>
                             <li>
-                                PRODUK DIGITAL
+                                RF Digital Store
                             </li>
                         </ul>
                     </div>

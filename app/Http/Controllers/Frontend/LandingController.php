@@ -11,6 +11,7 @@ use App\Models\Produk;
 use App\Models\Rating;
 use App\Models\Slide;
 use App\Models\User;
+use App\Models\Visitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -27,6 +28,8 @@ class LandingController extends Controller
         $popular = Produk::latest()->where('popular', 1)->where('is_active', 1)->get();
         $ratings = Rating::all();
         $slider = Slide::where('status', 1)->latest()->get();
+        $pengunjung = Visitor::latest()->paginate(10);
+        Visitor::increment('visitors');
 
         return view('frontend.landing', compact('kategoriproduk', 'produks', 'popular', 'ratings', 'slider'));
     }
