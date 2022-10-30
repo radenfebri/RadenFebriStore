@@ -75,7 +75,7 @@
                                     <br>
                                     <div class="multiple-file-upload"> 
                                         @if ($payment->image)
-                                        <img src="{{ asset('storage/'. $payment->image) }}" class="rounded" width="245px" height="245px" alt="{{ $payment->kategori }}">
+                                        <img src="{{ asset('storage/'. $payment->image) }}" loading="lazy" class="rounded" width="245px" height="245px" alt="{{ $payment->kategori }}">
                                         @else
                                         Cover Masih Kosong
                                         @endif

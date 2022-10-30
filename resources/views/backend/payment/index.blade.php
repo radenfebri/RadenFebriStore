@@ -113,9 +113,9 @@
                                         <td class="checkbox-column text-center"> {{ $no + 1 }} </td>
                                         <td class="text-center">
                                             @if ($item->image)
-                                            <span><img src="{{ asset('storage/'. $item->image ) }}" class="profile-img" alt="{{ $item->name }}"></span>
+                                            <span><img src="{{ asset('storage/'. $item->image ) }}" class="profile-img" loading="lazy" alt="{{ $item->name }}"></span>
                                             @else
-                                            <span><img src="{{ asset('back') }}/src/assets/img/profile-17.jpeg" class="profile-img" alt="{{ $item->name }}"></span>
+                                            <span><img src="{{ asset('back') }}/src/assets/img/profile-17.jpeg" class="profile-img" loading="lazy" alt="{{ $item->name }}"></span>
                                             @endif
                                         </td>
                                         <td>{{ $item->kategori }}</td>
