@@ -31,6 +31,6 @@ class SendPesananBaru extends Mailable
     {
         return $this->markdown('emails.pesanan-baru', [
             'detail' => $this->detail,
-        ])->subject('Invoice Pesanan Baru');
+        ])->subject('Invoice RFS - ' . $this->detail['tracking_no']);
     }
 }

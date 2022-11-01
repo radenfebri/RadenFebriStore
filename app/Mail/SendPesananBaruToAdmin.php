@@ -31,6 +31,6 @@ class SendPesananBaruToAdmin extends Mailable
     {
         return $this->markdown('emails.pesanan-baru-admin', [
             'detail' => $this->detail,
-        ])->subject('Pesanan Baru Masuk');
+        ])->subject('Pesanan Baru Masuk - ' . $this->detail['tracking_no']);
     }
 }

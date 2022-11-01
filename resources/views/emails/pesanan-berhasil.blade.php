@@ -1,7 +1,7 @@
 @component('mail::message')
 ## Hai, {{ $order->name }}
 
-Kami informasikan bahwasannya Pesanan anda sudah kami terima dan status dari Unpaid menjadi Unpaid.<br>
+Kami informasikan bahwasannya Pesanan anda sudah kami terima dan status dari Unpaid menjadi Paid.<br>
 Berikut Catatan dari kami & Status Pesanan dinyatakan sebagai berikut :
 @if ($order->status == '0') 
 ## UNPAID

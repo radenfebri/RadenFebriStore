@@ -45,8 +45,8 @@
                                     <small class="text-muted">{{ date('d F Y',strtotime($item->created_at)) }}</small>
                                 </div>
                                 <div class="col-md-4">
-                                    @if ($item->produks->image)
-                                    <img src="{{ asset('storage/'. $item->produks->image) }}" style="width: 50px; height: 50px;" alt="{{ $item->name }}">
+                                    @if ($item->produks->cover)
+                                    <img src="{{ asset('storage/'. $item->produks->cover) }}" style="width: 50px; height: 50px;" alt="{{ $item->name }}">
                                     @else
                                     <img src="{{ asset('front') }}/img/800x800.png"  style="width: 50px; height: 50px;" alt="{{ $item->name }}">
                                     @endif
