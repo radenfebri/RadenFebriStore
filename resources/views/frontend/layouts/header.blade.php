@@ -32,11 +32,6 @@
                         <a href="{{ route('favorit.view') }}"><i class="fa fa-heart"></i>
                         </a>
                     </li>
-                    <li class="login">
-                        <a href="{{ route('cart.view') }}" class="dropdown-toggle" data-toggle="dropdown" >
-                            <i class="fa fa-bell"></i>
-                        </a>
-                    </li>
                 </ul>
             </div>  
             @else

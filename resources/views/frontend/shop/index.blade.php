@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('title', 'Semua Produk Digital | Raden Febri Store')
+
 @section('content')
 
 

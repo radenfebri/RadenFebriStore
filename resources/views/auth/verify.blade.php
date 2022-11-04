@@ -1,5 +1,7 @@
 @extends('auth.layouts.master')
 
+@section('title', "Verifikasi Email | Raden Febri Store")
+
 @section('content')
 
 

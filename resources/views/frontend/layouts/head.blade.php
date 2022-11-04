@@ -11,7 +11,7 @@
     @vite([])
 
     <!-- ========== Page Title ========== -->
-    <title>Maxa - Multipurpose HTML5 Template</title>
+    <title>@yield('title')</title>
 
     <!-- ========== Favicon Icon ========== -->
     <link rel="shortcut icon" href="{{ asset('front') }}/img/favicon.png" type="image/x-icon">

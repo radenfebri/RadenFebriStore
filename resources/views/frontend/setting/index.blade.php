@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('title', "Setting Data | Raden Febri Store")
+
 @section('content')
 
 <div class="validtheme-shop-area default-padding">

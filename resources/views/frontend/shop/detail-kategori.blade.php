@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('title', "$kategoriproduk->name | Raden Febri Store")
+
 @section('content')
 
 

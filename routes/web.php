@@ -122,7 +122,7 @@ Route::middleware(['has.role'])->middleware('auth', 'verified')->group(function 
     Route::put('kategori-produk/{id}/update',  [KategoriProdukController::class, 'update'])->name('kategori-produk.update');
     Route::get('kategori-produk/destroy/{id}',  [KategoriProdukController::class, 'destroy'])->name('kategori-produk.destroy');
 
-    // ROUTE KATEGORI PRODUK
+    // ROUTE PRODUK
     Route::get('produk', [ProdukController::class, 'index'])->name('produk.index');
     Route::get('produk/create', [ProdukController::class, 'create'])->name('produk.create');
     Route::post('produk/store', [ProdukController::class, 'store'])->name('produk.store');

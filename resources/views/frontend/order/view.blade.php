@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('title', "Detail Pembayaran | Raden Febri Store")
+
 @section('content')
 
 

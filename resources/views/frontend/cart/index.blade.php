@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('title', "Keranjang | Raden Febri Store")
+
 @section('content')
 <!-- Start Shop 
     ============================================= -->

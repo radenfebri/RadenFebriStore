@@ -1,5 +1,7 @@
 @extends('auth.layouts.master')
 
+@section('title', "Reset Password | Raden Febri Store")
+
 @section('content')
 
 <div class="row">

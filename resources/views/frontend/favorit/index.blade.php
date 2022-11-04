@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('title', "Produk Favorit | Raden Febri Store")
+
 @section('content')
 
 <div class="validtheme-shop-area default-padding">

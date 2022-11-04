@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
 
+@section('title', 'Raden Febri Store')
+
 @section('content')
 
 <div class="banner-area auto-height mb-3">

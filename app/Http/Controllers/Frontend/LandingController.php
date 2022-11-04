@@ -64,7 +64,7 @@ class LandingController extends Controller
 
     public function detailkategori($slug)
     {
-        if (KategoriProduk::where('slug', $slug)->exists()) {
+        if (KategoriProduk::where('slug', $slug)->where('is_active', 1)->exists()) {
             $kategoriproduk = KategoriProduk::where('slug', $slug)->first();
             $populer = Produk::where('popular', 1)->limit(4)->latest()->get();
             $produk = Produk::where('kategori_id', $kategoriproduk->id)->latest()->paginate(20);
@@ -72,7 +72,7 @@ class LandingController extends Controller
 
             return view('frontend.shop.detail-kategori', compact('kategoriproduk', 'populer', 'produk', 'ratings'));
         } else {
-            return back();
+            return redirect()->route('semuakategori')->with('error', 'Kategori tidak ditemukan / sudah tidak aktif');
         }
     }
 
