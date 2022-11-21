@@ -98,14 +98,14 @@
                             <li><a href="{{ route('myorder.index') }}">Order <span class="badge order-count" style="background-color: #f35a38;">0</span></a></li>
                             <li><a href="{{ route('settingprofile') }}">Setting</a></li>
                             @if (Route::has('logout'))
-                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">Logout</a></li>
-                                @endif
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                                
-                            </ul>
+                                <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">Logout</a></li>
+                                    @endif
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                    
+                                </ul>
                             @endguest
                         </li>
                         @guest

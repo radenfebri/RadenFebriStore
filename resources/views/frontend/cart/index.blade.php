@@ -55,7 +55,11 @@
                                             <span class="text-muted">Rp. {{ number_format($item->produks->selling_price) }}</span>
                                         @endif
                                     </div>
-                                    <span><a href="{{ route('deletecart') }}" class="delete-cart-item"><i class="fas fa-trash text-danger" data-toggle="tooltip" title="Hapus Produk"></i></a></span>
+                                    <span>
+                                        <a href="{{ route('deletecart') }}" class="delete-cart-item">
+                                            <i class="fas fa-trash text-danger" data-toggle="tooltip" title="Hapus Produk"></i>
+                                        </a>
+                                    </span>
 
                                 </li>
                                 @if ($item->produks->selling_price == null)
