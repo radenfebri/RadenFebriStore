@@ -18,6 +18,6 @@
     <link href="{{ asset('back') }}/src/assets/css/dark/authentication/auth-boxed.css" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
 
-    @vite([])
+    {{-- @vite([]) --}}
     
 </head>

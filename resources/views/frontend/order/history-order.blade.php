@@ -41,30 +41,30 @@
                             @php $total = 0; @endphp
                             
                             @foreach ($orders->orderitem as $item)  
-                            <li class="list-group-item d-flex justify-content-between lh-condensed produk_data">
-                                <div class="col-md-6">
-                                    <a href="{{ route('detail.produk', $item->produks->slug ) }}"><h6 class="my-0"><b>{{ \Illuminate\Support\Str::words($item->produks->name, 3, '...') }}</b></h6></a>
-                                    <small class="text-muted">{{ date('d F Y',strtotime($item->created_at)) }}</small>
-                                </div>
-                                <div class="col-md-4">
-                                    @if ($item->produks->cover)
-                                    <img src="{{ asset('storage/'. $item->produks->cover) }}" style="width: 50px; height: 50px;" alt="{{ $item->name }}">
-                                    @else
-                                    <img src="{{ asset('front') }}/img/800x800.png"  style="width: 50px; height: 50px;" alt="{{ $item->name }}">
-                                    @endif
-                                </div>
-                                    <span class="text-muted">Rp. {{ number_format($item->price) }}</span>
-                            </li>
+                                <li class="list-group-item d-flex justify-content-between lh-condensed produk_data">
+                                    <div class="col-md-6">
+                                        <a href="{{ route('detail.produk', $item->produks->slug ) }}"><h6 class="my-0"><b>{{ \Illuminate\Support\Str::words($item->produks->name, 3, '...') }}</b></h6></a>
+                                        <small class="text-muted">{{ date('d F Y',strtotime($item->created_at)) }}</small>
+                                    </div>
+                                    <div class="col-md-4">
+                                        @if ($item->produks->cover)
+                                        <img src="{{ asset('storage/'. $item->produks->cover) }}" style="width: 50px; height: 50px;" alt="{{ $item->name }}">
+                                        @else
+                                        <img src="{{ asset('front') }}/img/800x800.png"  style="width: 50px; height: 50px;" alt="{{ $item->name }}">
+                                        @endif
+                                    </div>
+                                        <span class="text-muted">Rp. {{ number_format($item->price) }}</span>
+                                </li>
                             @php $total += $item->price; @endphp
                             @endforeach
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>Total Harga Murni (Rp)</span>
-                                <strong class="text-success">Rp. {{ number_format($total) }}</strong>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span><b>Total Harga yang sudah di Bayar (Rp)</b></span>
-                                <strong class="text-danger">Rp. {{ number_format($orders->total_price) }}</strong>
-                            </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Total Harga Murni (Rp)</span>
+                                    <strong class="text-success">Rp. {{ number_format($total) }}</strong>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span><b>Total Harga yang sudah di Bayar (Rp)</b></span>
+                                    <strong class="text-danger">Rp. {{ number_format($orders->total_price) }}</strong>
+                                </li>
                         </ul>
                         @if($orders->message_admin == null)
 

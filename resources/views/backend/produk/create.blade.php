@@ -94,7 +94,7 @@
                                 <div class="col-xxl-12 mb-4">
                                     <div class="">
                                         <label class="switch-label" for="enableComment">Pilih Kategori<span class="text-danger">*</span></label>
-                                        <select class="form-select @error('image') is-invalid @enderror" name="kategori_id" id="category">
+                                        <select class="form-select @error('kategori_id') is-invalid @enderror" name="kategori_id" id="category">
                                             <option disabled selected>--Pilih Kategori Produk--</option>
                                             @foreach ($kategoriproduk as $item)
                                             @if (old('kategori_id') == $item->id )
@@ -104,6 +104,7 @@
                                             @endif
                                             @endforeach
                                         </select>
+
                                         @error('kategori_id')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

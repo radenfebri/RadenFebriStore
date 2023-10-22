@@ -74,7 +74,7 @@
     <link href="{{ asset('back') }}/src/assets/css/dark/apps/invoice-add.css" rel="stylesheet" type="text/css" />
 
     
-    @vite([])
+    {{-- @vite([]) --}}
     
     
     

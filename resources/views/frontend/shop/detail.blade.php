@@ -29,12 +29,24 @@
                     <div class="product-thumb">
                         <div class="carousel slide" data-ride="carousel" id="timeline-carousel">
                             @if ($images->count() > 0)
-                            <div class="carousel-inner item-box">
-                                @if ($images->count() > 0)
-                                    @foreach ($images as $key => $item)
-                                        <div class="carousel-item product-item {{ $key == '0' ? 'active':'' }}">
-                                            <a href="{{ asset('storage/images-produk/'. $item->image) }}" class="item popup-gallery">
-                                                <img src="{{ asset('storage/images-produk/'. $item->image) }}" loading="lazy" alt="{{ $produk->name }}">
+                                <div class="carousel-inner item-box">
+                                    @if ($images->count() > 0)
+                                        @foreach ($images as $key => $item)
+                                            <div class="carousel-item product-item {{ $key == '0' ? 'active':'' }}">
+                                                <a href="{{ asset('storage/images-produk/'. $item->image) }}" class="item popup-gallery">
+                                                    <img src="{{ asset('storage/images-produk/'. $item->image) }}" loading="lazy" alt="{{ $produk->name }}">
+                                                </a>
+                                                @if ($produk->popular == 1)
+                                                <span class="onsale">Populer!</span>
+                                                @else
+                                                
+                                                @endif
+                                            </div>
+                                        @endforeach
+                                    @else
+                                        <div class="carousel-item product-item active">
+                                            <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
+                                                <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Thumb">
                                             </a>
                                             @if ($produk->popular == 1)
                                             <span class="onsale">Populer!</span>
@@ -42,8 +54,10 @@
                                             
                                             @endif
                                         </div>
-                                    @endforeach
-                                @else
+                                    @endif
+                                </div>
+                            @else
+                                <div class="carousel-inner item-box">
                                     <div class="carousel-item product-item active">
                                         <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
                                             <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Thumb">
@@ -54,51 +68,37 @@
                                         
                                         @endif
                                     </div>
-                                @endif
-                            </div>
-                            @else
-                            <div class="carousel-inner item-box">
-                                <div class="carousel-item product-item active">
-                                    <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
-                                        <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Thumb">
-                                    </a>
-                                    @if ($produk->popular == 1)
-                                    <span class="onsale">Populer!</span>
-                                    @else
-                                    
-                                    @endif
+                                    <div class="carousel-item product-item">
+                                        <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
+                                            <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Thumb">
+                                        </a>
+                                        @if ($produk->popular == 1)
+                                        <span class="onsale">Populer!</span>
+                                        @else
+                                        
+                                        @endif
+                                    </div>
+                                    <div class="carousel-item product-item">
+                                        <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
+                                            <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Thumb">
+                                        </a>
+                                        @if ($produk->popular == 1)
+                                        <span class="onsale">Populer!</span>
+                                        @else
+                                        
+                                        @endif
+                                    </div>
+                                    <div class="carousel-item product-item">
+                                        <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
+                                            <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Thumb">
+                                        </a>
+                                        @if ($produk->popular == 1)
+                                        <span class="onsale">Populer!</span>
+                                        @else
+                                        
+                                        @endif
+                                    </div>
                                 </div>
-                                <div class="carousel-item product-item">
-                                    <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
-                                        <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Thumb">
-                                    </a>
-                                    @if ($produk->popular == 1)
-                                    <span class="onsale">Populer!</span>
-                                    @else
-                                    
-                                    @endif
-                                </div>
-                                <div class="carousel-item product-item">
-                                    <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
-                                        <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Thumb">
-                                    </a>
-                                    @if ($produk->popular == 1)
-                                    <span class="onsale">Populer!</span>
-                                    @else
-                                    
-                                    @endif
-                                </div>
-                                <div class="carousel-item product-item">
-                                    <a href="{{ asset('front') }}/img/800x800.png" class="item popup-gallery">
-                                        <img src="{{ asset('front') }}/img/800x800.png" loading="lazy"  alt="Thumb">
-                                    </a>
-                                    @if ($produk->popular == 1)
-                                    <span class="onsale">Populer!</span>
-                                    @else
-                                    
-                                    @endif
-                                </div>
-                            </div>
                             @endif
                             
                             

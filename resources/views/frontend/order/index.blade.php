@@ -42,7 +42,6 @@
               
               @foreach ($produk as $item)
               <li class="list-group-item d-flex justify-content-between lh-condensed produk_data">
-                <input type="hidden" class="prod_id" value="{{ $item->prod_id }}">
                 <div>
                   <h6 class="my-0"><b>{{ \Illuminate\Support\Str::words($item->produks->name, 5, '...') }}</b></h6>
                   <small class="text-muted">{{ \Illuminate\Support\Str::words($item->produks->small_description, 5, '...') }}</small>

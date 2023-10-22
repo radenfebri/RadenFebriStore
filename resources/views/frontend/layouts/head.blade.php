@@ -8,7 +8,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @vite([])
+    {{-- @vite([]) --}}
 
     <!-- ========== Page Title ========== -->
     <title>@yield('title')</title>
